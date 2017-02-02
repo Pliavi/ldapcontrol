@@ -11,7 +11,7 @@
                         <div class="row">
                             <div class="col-md-2">
                                 <label>Matrícula</label>
-                                <input type="number" name='sAMAccountName' class="form-control">
+                                <input type="number" name='userPrincipalName' class="form-control">
                             </div>
                             <div class="col-md-10">
                                 <label>Nome</label>

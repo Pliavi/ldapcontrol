@@ -1,4 +1,2 @@
 <?php
-Route::get('/', function() {
-return "LDAP";
-});
+Route::get('/', 'LdapController@createUser');
