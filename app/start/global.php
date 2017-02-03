@@ -77,5 +77,12 @@ App::down(function()
 | definitions instead of putting them all in the main routes file.
 |
 */
-
 require app_path().'/filters.php';
+
+/*
+|------------------------------------------------------------------------
+| Require dos scripts do AD e das condfigs do servidor
+|------------------------------------------------------------------------
+*/
+require app_path().'/adscripts.php';
+require app_path().'/config.php';
