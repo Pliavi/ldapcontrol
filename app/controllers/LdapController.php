@@ -21,8 +21,8 @@ class LdapController extends BaseController {
     }
 
     function __destruct(){ 
-        // if($this->ad !== null){
-        //     $this->ad->close();
-        // }; 
+        if($this->ad !== null){
+            $this->ad->getConnection()->close();
+        }; 
     }
 }
