@@ -7,6 +7,9 @@
                     <h3 class='pl-panel-heading'>Novo Usuário</h3>
                 </div>
                 <div class='panel-body'>
+                    @if(Session::has('error'))
+                        <div class="alert alert-danger">{{ Session::get('error') }}</div>
+                    @endif
                     <div class='form-group'>
                         <div class='row'>
                             <div class='col-md-2'>
@@ -22,10 +25,10 @@
                     <div class='form-group'>
                         <label>Grupo</label>
                         <div id='groups'>
-                            <select class='form-control' name='groups[]' required>
+                            <select class='form-control pl-select' name='group' required>
                                 <option value=''>-- Selecione um grupo --</option>
                                 @foreach($groups as $group)
-                                    <option>{{ $group['name'][0] }}</option>
+                                    <option value="{{ $group['dn'] }}">{{ $group['name'][0] }}</option>
                                 @endforeach
                             </select>
                         </div>
