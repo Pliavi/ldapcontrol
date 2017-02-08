@@ -1,28 +1,13 @@
-/* Muda a cor do fundo */
-body{
-    background: #666;
-}
-
-/* Traz o form de cadaststro de novo usuário um pouco mais pra baixo */
-.pl-top-margin{
-    margin-top: 20px;
-}
-
-/* Centralizar o form de login */
-.pl-centralize-container{
-    display: flex;
-    height: 100%;
-    align-items: center;
-}
-
-/* Alteração dos estilos dos titulos */
-.pl-panel-heading{
-    margin: 0;
-    color: #555;
+label {
     font-weight: bold;
-    text-transform: uppercase;
+    margin-left: 4px;
 }
 
-.pl-select{
-    text-transform: uppercase;
+header {
+    padding: 16px;
+    margin-bottom: 10px; 
+    background-color: #09a0f6;
+    font-size: 36px;
+    text-align: center;
+    color: white;
 }
