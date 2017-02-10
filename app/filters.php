@@ -35,7 +35,7 @@ App::after(function($request, $response)
 
 Route::filter('auth', function()
 {
-	if (Auth::guest())
+	if (null == (Session::get('auth')))
 	{
 		if (Request::ajax())
 		{
@@ -43,6 +43,7 @@ Route::filter('auth', function()
 		}
 		else
 		{
+			Session::flash('error', 'Você deve entrar com sua matrícula para ter acesso à área solicitada, favor fazer o login.');
 			return Redirect::guest('login');
 		}
 	}

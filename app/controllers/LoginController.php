@@ -18,9 +18,10 @@ class LoginController extends BaseController{
             $user = $ad->users()->search()->whereEquals('sAMAccountname', $user['user'])->firstOrFail()->name[0];
 
             # Loga o usuário manualmente (sem verificação, pois a mesma foi feita pelo AD)
-            $user = new User(['name' => $user]);
-            Auth::login($user);
-            Session::flash('success', "Bem vindo, " . Auth::user()->name . "!");
+            // $user = new User(['id' => 1, 'name' => $user]);
+            // Auth::login($user);
+            Session::flash('auth', $user);
+            Session::flash('success', "Bem vindo, {$user}!");
 
             # Encerra a conexão, pois é desnecessária, o usuario logado não terá privilégios
             $ad->getConnection()->close(); 
@@ -34,5 +35,10 @@ class LoginController extends BaseController{
             return Redirect::back();
         }
 
+    }
+
+    public function logout(){
+        Session::forget('auth');
+        return Redirect::guest('login');
     }
 }
