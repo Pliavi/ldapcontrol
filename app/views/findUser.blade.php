@@ -1,6 +1,6 @@
 @include('includes.head')
 <header>Controle AD</header>
-<form action="{{ route('findUser') }}" method='GET' class='grid'>
+<form action="{{ route('findUser') }}" method='POST' class='grid'>
     @include('includes.notification')
     <div class='alert'>
         Use a pesquisa abaixo para verificar a já existência da matrícula no sistema. <br>
