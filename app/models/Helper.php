@@ -21,4 +21,25 @@ class Helper {
         }
         return $tmp;
     }
+
+    public static function getGroupOUs($groupDn){
+        $groupDn = (explode(",", $groupDn));
+
+        $ou = '';
+        foreach($groupDn as $partial) { 
+            # do DN do grupo, pega apenas as OU e as que não seja de Grupo (OU=Grupos)
+            if(substr($partial, 0, 2) == "OU" && !strpos($partial, 'Grupos')){
+                $ou .= ",$partial";
+            }
+        }
+
+        return $ou;
+    }
+
+    public static function generateScriptPath($groupDn){
+        $ou = Helper::getGroupOUs($groupDn);
+        return strtolower(explode('-', explode(',', $ou)[1])[1]).'.vbs';
+        
+    }
+
 }
