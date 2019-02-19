@@ -15,7 +15,7 @@ class LdapController extends BaseController {
             Log::warning($e->getMessage());
             echo 'Active directory fora do ar ou utilizando credenciais antigas.<br>';
             echo '-----<br>';
-            echo 'Tente novamente mais tarde e avise a Secretaria de Planejamento e Tecnologia da Informação';
+            echo 'Tente novamente mais tarde e avise o setor de cadastro';
             exit;
         }
     }
